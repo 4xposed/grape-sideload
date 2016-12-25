@@ -1,14 +1,22 @@
-require 'merge_payloads'
+require_relative 'merge_payloads'
 module Grape
   module Sideload
-    module PresentMany
-      def merge_presenters(*input)
+    class PresentMany
+      def initialize(input, block)
         @input = input
+        @block = block
+      end
+
+      def self.call(*input, block)
+        new(input, block).merge_presenters
+      end
+
+      def merge_presenters
         merged_payload
       end
 
       private
-      attr_reader :input
+      attr_reader :input, :block
 
       def merged_payload
         MergePayloads.(*presented)
@@ -17,7 +25,7 @@ module Grape
       def presented
         # call #present on Grape::API to format the resoruces using the entity passed by the user
         input.map do |payload|
-          self.present(
+          block.(
             payload[:present],
             with: payload[:with]
           )

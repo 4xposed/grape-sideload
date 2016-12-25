@@ -10,7 +10,7 @@ module Grape
     end
 
     def present_many(*args)
-      PresentMany.(*args)
+      PresentMany.(*args, method(:present).to_proc)
     end
   end
 end
