@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Sideload resources on your JSON response in your Grape API}
   spec.description   = %q{Sideload resources on your JSON response in your Grape API}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/4xposed/grape-sideload"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
