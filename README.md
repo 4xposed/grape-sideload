@@ -1,4 +1,8 @@
 # Grape::Sideload
+[![Gem Version](https://badge.fury.io/rb/grape-sideload.svg)](https://badge.fury.io/rb/grape-sideload)
+[![Build Status](https://travis-ci.org/4xposed/grape-sideload.svg?branch=master)](https://travis-ci.org/4xposed/grape-sideload)
+[![Dependency Status](https://gemnasium.com/badges/github.com/4xposed/grape-sideload.svg)](https://gemnasium.com/github.com/4xposed/grape-sideload)
+[![Code Climate](https://codeclimate.com/github/4xposed/grape-sideload/badges/gpa.svg)](https://codeclimate.com/github/4xposed/grape-sideload)
 
 Add sideloading support to your Grape API so you can deliver multiple resources under one endpoint.
 
