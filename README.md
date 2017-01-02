@@ -27,7 +27,7 @@ require 'grape-sideload'
 
 ## Usage
 
-example for sideloading with `present many`:
+example for sideloading with `present_many`:
 
 ```ruby
 resources :nature do
