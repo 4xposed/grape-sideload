@@ -87,10 +87,10 @@ require 'grape-sideload'
 example for sideloading with `present_many`:
 
 ```ruby
-resources :nature do
+resources :tickets do
   get do
-    present_many { present: Animal.all, with: Animal::Entity },
-                 { present: Fruit.all, with: Fruit::Entity}
+    present_many { present: current_user.tickets, with: Ticket::Entity },
+                 { present: current_user, with: User::Entity}
   end
 end
 ```
@@ -98,10 +98,10 @@ end
 example for sideloading with `merge_payloads` to sideload using grape's present syntax:
 
 ```ruby
-resource :nature do
+resource :tickets do
   get do
-    merge_payloads present(Animal.all, with: Animal::Entity),
-                   present(Fruit.all, with: Fruit::Entity)
+    merge_payloads present(current_user.tickets, with: Ticket::Entity),
+                   present(current_user, with: User::Entity)
 
   end
 end
