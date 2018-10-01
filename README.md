@@ -89,8 +89,8 @@ example for sideloading with `present_many`:
 ```ruby
 resources :tickets do
   get do
-    present_many { present: current_user.tickets, with: Ticket::Entity },
-                 { present: current_user, with: User::Entity}
+    present_many({ present: current_user.tickets, with: Ticket::Entity },
+                 { present: current_user, with: User::Entity})
   end
 end
 ```
@@ -100,8 +100,8 @@ example for sideloading with `merge_payloads` to sideload using grape's present 
 ```ruby
 resource :tickets do
   get do
-    merge_payloads present(current_user.tickets, with: Ticket::Entity),
-                   present(current_user, with: User::Entity)
+    merge_payloads(present(current_user.tickets, with: Ticket::Entity),
+                   present(current_user, with: User::Entity))
 
   end
 end
